@@ -5,6 +5,7 @@ import getTodo from '@functions/getTodo';
 import updateTodo from '@functions/updateTodo';
 import deleteTodo from '@functions/deleteTodo';
 import register from '@functions/register';
+import login from '@functions/login';
 
 const serverlessConfiguration: AWS = {
   service: 'node-app-vibin',
@@ -47,7 +48,7 @@ const serverlessConfiguration: AWS = {
     ],
   },
   // import the function via paths
-  functions: { createTodo,getTodo,updateTodo ,deleteTodo,register},
+  functions: { createTodo,getTodo,updateTodo ,deleteTodo,register,login},
   package: { individually: true },
   
   custom: {

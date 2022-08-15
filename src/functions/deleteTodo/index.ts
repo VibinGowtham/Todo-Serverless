@@ -8,6 +8,11 @@ export default {
       http: {
         method: 'delete',
         path: 'deleteTodo/{Id}',
+        authorizer:{
+          name: "PrivateAuthorizer-vibin",
+          type: "COGNITO_USER_POOLS",
+          arn:"arn:aws:cognito-idp:us-east-1:877969058937:userpool/us-east-1_tS4kPcFzo"
+        },
       },
     },
   ],

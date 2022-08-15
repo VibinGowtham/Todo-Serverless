@@ -1,4 +1,3 @@
-import schema from './schema';
 import { handlerPath } from '@libs/handler-resolver';
 
 export default {
@@ -8,10 +7,10 @@ export default {
       http: {
         method: 'post',
         path: 'createTodo',
-        request: {
-          schemas: {
-            'application/json': schema,
-          },
+        authorizer:{
+          name: "PrivateAuthorizer-vibin",
+          type: "COGNITO_USER_POOLS",
+          arn:"arn:aws:cognito-idp:us-east-1:877969058937:userpool/us-east-1_tS4kPcFzo"
         },
       },
     },
