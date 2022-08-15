@@ -14,16 +14,20 @@ const {date}=event.pathParameters;
     ExpressionAttributeValues: { ':value': date },
     ExpressionAttributeNames: { '#name': 'date' }
   }
+
+  console.log("user_pool_id"+" "+process.env.user_pool_id);
   
-  console.log(date);
-  console.log(params);
+  console.log("client_id"+" "+process.env.client_id);
+  // console.log(date);
+  // console.log(params);
   
 
+
   try{
-    console.log("in");
+    // console.log("in");
     
     const results=await dynamoDB.query(params).promise();
-    console.log(results);
+    // console.log(results);
     
     return formatJSONResponse({
       Todos: results.Items
